@@ -1,0 +1,13 @@
+drop database if exists ShoppingDatabase;
+
+create database ShoppingDatabase;
+use ShoppingDatabase;
+
+create table if not exists users(userId int NOT NULL AUTO_INCREMENT, userName varchar(20), password varchar(40), primary key(userId));
+
+create table if not exists customers (userId int NOT NULL AUTO_INCREMENT, fname varchar(20), lname varchar(20), address varchar(40), phone varchar(20), email varchar(20), password varchar(40), primary key(userId));
+
+create table if not exists invoice (invoiceId int NOT NULL AUTO_INCREMENT, productId int, price varchar(20), quantity int, primary key(invoiceId));
+
+create table if not exists products (productId int NOT NULL AUTO_INCREMENT, productName varchar(20), description varchar(20), unitsInStock int, primary key(productId));
+
